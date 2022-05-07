@@ -51,6 +51,7 @@ void CBinaryFiles(string sfile, std::vector<std::string> & hexDec)
 
         std::cout << "Hexadecimal translation successful!" << endl;
 	    
+	 //store each translated hexadecimal in a vector of strings
         string temp;
         for (int a = 0; a < tohexed.length(); a++)
         {
@@ -70,9 +71,11 @@ void CBinaryFiles(string sfile, std::vector<std::string> & hexDec)
 
 void main()
 {
+    //hexadecimal string
     std::vector<std::string>hexDec;
 	CBinaryFiles("Morse.bin", hexDec);
     
+    //used to read each object in vector of hexadecimals
     int i = 0;
     char hexDecNum[10];
 
@@ -144,6 +147,7 @@ void main()
                 break;
             case 'F':
             case 'f':
+		//error prone, do nothing
                 break;
             default:
                 cout << "--Invalid Hex Digit (" << hexDecNum[i] << ")--";
@@ -166,6 +170,7 @@ void main()
         if (binary == "00")
         {
             decrypted.push_back('L');
+	    //L for letter space
         }
         else if (binary == "01")
         {
